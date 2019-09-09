@@ -1,6 +1,7 @@
-function takeANumber(anyLine, newCustName) {
-  anyLine.push(newCustName);
-  return `Welcome, ${newCustName}. You are number ${anyLine.length} in line.`;
+function takeANumber(anyLine) {
+  let newCust = anyLine.length + 1;
+  let updatedLine = anyLine.push(newCust);
+  return `You are number ${newCust} in line.`;
 }
 
 
@@ -8,9 +9,9 @@ function nowServing(anyLine) {
   if (anyLine.length === 0) {
   return 'There is nobody waiting to be served!';
   } else {
-    let firstBloke = anyLine.shift();
-    return `Currently serving ${firstBloke}.`;
-  }
+    let firstCust = anyLine.shift();
+    return `Currently serving ${firstCust}.`;
+  } 
 }
 
 
@@ -24,3 +25,6 @@ function currentLine(anyLine) {
     } return `The line is currently:${numberedLine}`;
   }
 }
+
+
+console.log(takeANumber(anyLine));
